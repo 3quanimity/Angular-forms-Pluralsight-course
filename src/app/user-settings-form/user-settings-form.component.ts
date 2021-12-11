@@ -24,11 +24,14 @@ export class UserSettingsFormComponent implements OnInit {
   postErrorMessage: string = '';
   // subscriptionTypes = ['Monthly', 'Annual', 'Lifetime'];
   subscriptionTypes: Observable<string[]> | undefined;
+  startDate: Date | undefined;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.subscriptionTypes = this.dataService.getSubscriptionTypes()
+    this.subscriptionTypes = this.dataService.getSubscriptionTypes();
+
+    this.startDate = new Date();
   }
 
   onBlur(field: NgModel) {
