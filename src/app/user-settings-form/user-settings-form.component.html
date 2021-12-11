@@ -18,6 +18,12 @@
         <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">Enter a name</div>
       </div>
 
+      <!-- ngx-button  -->
+      <button type="button" class="btn btn-primary" name="singleModel" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="On"
+        btnCheckboxFalse="Off">
+        {{ singleModel }}
+      </button>
+
       <div class="form-check form-group">
         <input class="form-check-input" type="checkbox"
                 id="emailOffers" name="emailOffers" [(ngModel)]="userSettings.emailOffers">
@@ -28,7 +34,17 @@
 
       <p>User Interface Style</p>
       <div class="form-group">
-        <div class="form-check">
+      <!-- ngx-checkbox-group  -->
+      <div class="btn-group">
+        <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+               btnRadio="Light" tabindex="0" role="button">Light</label>
+        <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+               btnRadio="Medium" tabindex="0" role="button">Medium</label>
+        <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+               btnRadio="Dark" tabindex="0" role="button">Dark</label>
+      </div>
+
+        <!-- <div class="form-check">
           <input class="form-check-input" type="radio" name="interfaceStyle" 
                  id="lightInterface" value="light" checked [(ngModel)]="userSettings.interfaceStyle">
           <label class="form-check-label" for="lightInterface">
@@ -47,8 +63,8 @@
                   id="darkInterface" value="dark" [(ngModel)]="userSettings.interfaceStyle">
           <label class="form-check-label" for="darkInterface">
             Dark
-          </label>
-        </div>
+          </label> 
+        </div> -->
       </div>
 
       <div class="form-group">
